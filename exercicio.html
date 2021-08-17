@@ -1,0 +1,115 @@
+<html>
+<head>
+	<!-- link do Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<!--link da fonte-->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Palette+Mosaic&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+</head>
+<style>
+	body{
+		/*plano de fundo*/
+		background-image: url(img/fundo.png);
+		
+	}
+	
+	*{
+		margin: 0;
+		
+	}
+	.input{
+
+		display: flex;
+		justify-content: center;
+		
+	}
+
+	.clicks{
+
+		display: flex;
+		justify-content: center;
+
+	}
+
+	.elementos{
+		margin: 200;
+		font-family: 'Shadows Into Light', cursive;
+		font-size: 3em;
+	}
+
+	
+	
+</style>
+<body>
+	
+	<div class="elementos">
+
+		<div class="mensagem">
+			<center>Tente adivinhar o número pensado de 1 à 100</center>
+		</div>
+
+		<div class="input">
+			<input type="text" name="numero">
+			<button>Jogar</button>
+		</div>
+		
+		<div class="jogo">
+			<script>
+				function pulaLinha() {
+
+		        document.write("<br>");
+		     }
+
+		    function mostra(frase) {
+
+		        document.write(frase);
+		        pulaLinha();
+			}
+
+			function compara() {
+				if(input.value == numero) {
+		    	alert("Você acertou");
+		   		}else{
+		    	alert("Você errou, o número era "+ numero);
+		    	}
+
+			}
+
+
+
+			/*declarando as variaveis*/
+			var numero =Math.round(Math.random() * 100);
+		    var input = document.querySelector("input");
+		    
+		    
+		  	var button = document.querySelector("button");
+			/*a tag onclick faz com que a função "compara" seja executada*/
+		    button.onclick = compara;
+
+
+			</script>
+		</div>
+		
+		<div class="clicks">
+			
+			<button id="botao">Clique aqui</button><br>
+
+			<script>
+				
+				window.onload= function(){
+
+					var contador= 0;
+					document.getElementById("botao").onclick = function(){
+					contador ++;
+					document.getElementById("mostrar").innerHTML=contador;
+					}
+
+				}
+			</script>
+	       <p>Clicks dados <span id="mostrar"></span></p>
+		</div>
+
+	</div>	
+</body>	
+</html>
